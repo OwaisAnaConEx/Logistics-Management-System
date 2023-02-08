@@ -1,0 +1,302 @@
+{% extends 'fedex_header.html' %}
+
+{% block maincontent%}
+{% load static %}
+<style>
+    :root{
+        --body: #8c9eff;
+        --cont: #eceff1;
+        --line: #651fff;
+        --txt: #007bfd;
+        --light: #c5cae9;
+    
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container1{
+        width: 1100px;
+        max-width: 100%;
+        padding: 30px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .details{
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    
+    }
+    .order h1{
+        text-transform:uppercase ;
+    }
+    .order span{
+        color: var(--line);
+    }
+    .date p{
+        font-size: 1.1rem;
+    }
+    .track{
+        margin: 6em 0 8em;
+    }
+    #progress{
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1em;
+      position: relative;
+      text-align: center;
+    }
+    #progress li{
+        width: 10%;
+        position: relative;
+    }
+    #progress li.active::before{
+        content: '\2713';
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 50px;
+        align-items: center;
+        font-size: 2rem;
+        height: 50px;
+        background: var(--line);
+        color: #fff;
+        border-radius: 50%;
+        z-index: 11111;
+    }
+    #progress li::before{
+        content: '\2713';
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 50px;
+        align-items: center;
+        font-size: 2rem;
+        height: 50px;
+        background: var(--line);
+        color: #fff;
+        border-radius: 50%;
+        z-index: 11111;
+        background: var(--light);
+    
+    }
+    #progress::after{
+        content: '';
+        position: absolute;
+        top: 20px;
+        width: 90%;
+        height: 10px;
+        background: #c5cae9;
+    
+    }
+    .lists{
+        display: flex;
+        gap: 2em;
+        flex-wrap: wrap;
+    }
+    .list{
+        display: flex;
+        gap: 1em;
+        flex: 1 1 60px;
+    }
+    .list p{
+        font-size: 1.1rem;
+       
+    }
+    </style>
+<div class="container1 container mt-5" style="transform:translateY(20%)">
+                <h4>Order <span>ZA-9403{{parcel.id}}</span></h4>
+
+            
+
+        {% if parcel.status.name == 'Processing'%}
+        <style>
+            #progress::before{
+                content: '';
+                position: absolute;
+                top: 20px;
+                width: 0%;
+                margin-left: 35px;
+                height: 10px;
+                background: var(--line);
+                z-index: 111;
+            }
+        </style>
+        <div class="track">
+            <ul id="progress" class="text-center">
+                <li class="active"></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+
+            </ul>
+        </div>
+
+
+        {% elif parcel.status.name == 'Booked'%}
+<style>
+    #progress::before{
+        content: '';
+        position: absolute;
+        top: 20px;
+        width: 15%;
+        margin-left: 35px;
+        height: 10px;
+        background: var(--line);
+        z-index: 111;
+    }
+</style>
+        <div class="track">
+            <ul id="progress" class="text-center">
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+
+            </ul>
+        </div>
+
+        {% elif parcel.status.name == 'Picked Up'%}
+        <style>
+            #progress::before{
+                content: '';
+                position: absolute;
+                top: 20px;
+                width: 35%;
+                margin-left: 35px;
+                height: 10px;
+                background: var(--line);
+                z-index: 111;
+            }
+        </style>
+        <div class="track">
+            <ul id="progress" class="text-center">
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+
+            </ul>
+        </div>
+
+        {% elif parcel.status.name == 'In warehouse'%}
+
+        <style>
+            #progress::before{
+                content: '';
+                position: absolute;
+                top: 20px;
+                width: 53%;
+                margin-left: 35px;
+                height: 10px;
+                background: var(--line);
+                z-index: 111;
+            }
+        </style>
+        <div class="track">
+            <ul id="progress" class="text-center">
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class=""></li>
+                <li class=""></li>
+
+            </ul>
+        </div>
+        {% elif parcel.status.name == 'Out For Delivery'%}
+        <style>
+            #progress::before{
+                content: '';
+                position: absolute;
+                top: 20px;
+                width: 70%;
+                margin-left: 35px;
+                height: 10px;
+                background: var(--line);
+                z-index: 111;
+            }
+        </style>
+        <div class="track">
+            <ul id="progress" class="text-center">
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class=""></li>
+
+            </ul>
+        </div>
+        {% elif parcel.status.name == 'Delivered'%}
+        <style>
+            #progress::before{
+                content: '';
+                position: absolute;
+                top: 20px;
+                width: 90%;
+                margin-left: 35px;
+                height: 10px;
+                background: var(--line);
+                z-index: 111;
+            }
+        </style>
+        <div class="track">
+            <ul id="progress" class="text-center">
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class="active"></li>
+
+            </ul>
+        </div>
+
+{%endif%}
+        <div class="lists">
+            <div class="list">
+                <img src="icon1.png" alt="">
+                <h6>PROCESSING</h6>
+            </div>
+
+            <div class="list">
+                <h6>BOOKED</h6>
+            </div>
+
+            <div class="list">
+                <h6>PICKED UP</h6>
+            </div>
+
+            <div class="list">
+                <h6>IN WAREHOUSE</h6>
+            </div>
+            <div class="list">
+                <h6>OUR FOR DELIVERY</h6>
+            </div>
+            <div class="list">
+                <h6>COMPLETED</h6>
+            </div> 
+        </div>
+
+       
+
+        
+    </div>
+</body>
+</html>
+
+{%endblock%}

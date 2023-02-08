@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>FedEx Dashboard</title>
+
+<!-- All Library CSS -->
+{% load static %}
+
+<link href=" {% static 'admin/css/bootstrap.min.css ' %}" rel="stylesheet" />
+<link href=" {% static 'admin/css/LineIcons.css ' %}" rel="stylesheet">
+<link href=" {% static 'admin/css/viewer.min.css ' %}" rel="stylesheet">
+<link href=" {% static 'admin/css/icofont.min.css ' %}" rel="stylesheet">
+<link href=" {% static 'admin/css/calendar.css ' %}" rel="stylesheet">
+<link href=" {% static 'admin/css/styles.css ' %}" rel="stylesheet">
+<link href=" {% static 'admin/css/responsive.css ' %}" rel="stylesheet">
+<!-- Favicon -->
+<link rel="shortcut icon" href=" {% static 'favicon.ico ' %}">    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="XygOqr-6UHNrvS3Vte4vy8qf9-SS6V4cuYGQCqGGNk86enz6-cMEQBz_Ref5r0Sf_PbCovC8bkbaxuVf77d0Pg==">
+</head>
+
+<body>
+    
+    <body>
+        <!-- Preloader -->
+        <!-- Preloader -->
+
+        {% comment %} <div class="preloader">
+    <div class="d-table">
+        <div class="d-tablecell">
+            <span class="loader">
+                <span class="loader-inner"></span>
+            </span>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+        <!-- Top Navbar -->
+		<!-- This conditions used for conditional header rendering like login, signup etc pages not showing the header -->
+					<nav class="navbar navbar-expand fixed-top top-menu">
+    <a class="navbar-brand" href="index.html">
+        <!-- Large logo -->
+        <!-- <img class="large-logo" src="images/large-logo.png">        <!-- Small logo -->
+        <!-- <img class="small-logo" src="images/small-logo.png" alt="Logo">    </a> --> 
+        <img style="width:100px" src="https://creativereview.imgix.net/content/uploads/2016/03/FedEx_101_NOTINMARKET.jpg"/>
+</a>
+    <!-- Burger menu -->
+    <div class="burger-menu toggle-menu">
+        <span class="top-bar"></span>
+        <span class="middle-bar"></span>
+        <span class="bottom-bar"></span>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+        <!-- Search form -->
+        <form class="nav-search-form d-none d-sm-block">
+            <input type="text" class="form-control" placeholder="Search...">
+            <button type="submit" class="search-success">
+                <i data-feather="search" class="icon"></i>
+            </button>
+        </form>
+
+        <!-- Right nav -->
+        <ul class="navbar-nav right-nav ml-auto">
+      
+            <!-- Profile dropdown -->
+            <li class="nav-item dropdown profile-nav-item">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="menu-profile">
+                        <span class="name">
+                            <i data-feather="user" class="icon"></i>
+                            {{request.user}}</span>
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/logout">
+                        <i data-feather="user" class="icon"></i>
+                        Logout
+                    </a>
+                  
+                    {% comment %} <a class="dropdown-item" href="{% url 'logout'%}">
+                        <i data-feather="log-out" class="icon"></i>
+                        Logout
+                    </a> {% endcomment %}
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>		
+			<!-- Side Menu -->
+			<div class="sidemenu-area sidemenu-toggle default">
+    <nav class="sidemenu navbar navbar-expand navbar-light hide-nav-title">
+        <div class="navbar-collapse collapse">
+            <div class="navbar-nav">
+        {% if request.user.is_staff %}
+              
+            
+
+                <a class="nav-link" href="{% url 'main'%} 
+                {% comment %} {% url 'dash'%} {% endcomment %}
+                ">
+                    <i data-feather="grid" class="icon"></i>
+                    <span class="title">Dashboard</span>
+                </a>
+       
+            
+                <a class="nav-link" href="{% url 'addrider'%}
+                {% comment %} {% url 'createAssignment'%} {% endcomment %}
+                ">
+                    <i data-feather="user" class="icon"></i>
+                    <span class="title">Add Rider</span>
+                </a>
+                <a class="nav-link" href="{% url 'viewParcels'%}
+                {% comment %} {% url 'studentpanel'%} {% endcomment %}
+                ">
+                    <i data-feather="file-text" class="icon"></i>
+ 
+                    <span class="title">Parcels</span>
+                </a>
+             
+               
+
+
+        
+        {% else %}
+        <a class="nav-link" href="
+        {% comment %} {% url 'studentpanel'%} {% endcomment %}
+        ">
+            <i data-feather="grid" class="icon"></i>
+            <span class="title">Dashboard</span>
+        </a>
+
+    
+        {% endif %}
+
+            </div>
+        </div>
+    </nav>
+</div>
+			<!-- Main Content Wrapper -->
+			<div class="main-content d-flex flex-column hide-sidemenu">
+						<!-- Main Content Layout -->
+				<!-- Main Content Header -->
+<div class="main-content-header">
+    <h1>Dashboard</h1>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="index.html">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">
+        </li>
+    </ol>
+</div>
+<!-- End Main Content Header -->
+
+
+{% block content%}
+
+
+{% endblock%}

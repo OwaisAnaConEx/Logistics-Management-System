@@ -1,0 +1,39 @@
+{% extends 'header.html' %}
+
+ {%load static%}
+<!-- Stats Card -->
+
+{% block content%}
+<div class="container col-md-8 ">
+    <h5 class=" mt-5 mb-5">Change Parcel Status</h5>
+  
+    <form action="" method="POST">
+      {% csrf_token %}
+  
+      <div class="form-group col-md-3">
+        <select  style="border:1px solid blue"  class="form-control" id="status" name="status">
+            {% for st in all%}
+
+            {% if st.id != currSta%}
+    
+            <option   value={{st.id}}>{{st.name}}</option>
+            {%endif%}
+            {% endfor %}
+    
+        </select>
+        
+    </div>
+
+    <button type="submit" class="btn btn-primary d-flex mr-10 ml-3">Change Status</button>
+  </form>
+</div>
+
+{% for rider in st%}
+    
+<p> {{rider.id}}{{rider.name}}</p>
+
+{% endfor %}
+
+{% include 'footer.html' %}
+
+{% endblock%}

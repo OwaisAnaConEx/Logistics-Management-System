@@ -1,0 +1,37 @@
+{% extends 'fedex_header.html' %}
+
+{% block maincontent%}
+{% load static %}
+<div class="bgimg">
+
+        <div class="container text-center hearderset">
+            <h1 style="color: white;">Ship, Manage, Track and Deliver</h1>
+            <p style="color: white">Relax, it’s FedEx.</p>
+            <br>
+           
+            <div class="box" id="box2"><img src="
+                {% static 'fedexpages/track.png' %}
+                "><br>TRACK</div>
+               <a href="/newParcel"> <div class="box" id="box1"><img src="
+                    {% static 'fedexpages/ship.png' %}
+                                " alt="">
+                                <br>SHIP</div></a>
+            <br>
+            <br>
+            <div class="input-group mb-3 input-group-lg" style="margin:0 auto !important;margin-left:40% !important">
+                <form action="" method ="POST">
+                    {% csrf_token %}
+
+                <input type="text" name="trackOrder" class="form-control" placeholder="TRACKING ID" ><br/>
+                    <button class="btn btn-success" type="submit"
+                        style="background-color: rgb(255 102 0)">TRACK</button>
+                </form>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+{%endblock%}

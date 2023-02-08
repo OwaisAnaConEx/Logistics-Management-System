@@ -1,0 +1,132 @@
+:root{
+    --body: #8c9eff;
+    --cont: #eceff1;
+    --line: #651fff;
+    --txt: #007bfd;
+    --light: #c5cae9;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: var(--line);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 1100px;
+   
+    max-width: 100%;
+    padding: 30px;
+    margin: 0 30px;
+    background: var(--cont);
+    position: relative;
+}
+.details{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.order h1{
+    text-transform:uppercase ;
+}
+.order span{
+    color: var(--line);
+}
+.date p{
+    font-size: 1.1rem;
+}
+.track{
+    margin: 6em 0 8em;
+}
+#progress{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+  text-align: center;
+}
+#progress li{
+    width: 10%;
+    position: relative;
+}
+#progress li.active::before{
+    content: '\2713';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    align-items: center;
+    font-size: 2rem;
+    height: 50px;
+    background: var(--line);
+    color: #fff;
+    border-radius: 50%;
+    z-index: 11111;
+}
+#progress li::before{
+    content: '\2713';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    align-items: center;
+    font-size: 2rem;
+    height: 50px;
+    background: var(--line);
+    color: #fff;
+    border-radius: 50%;
+    z-index: 11111;
+    background: var(--light);
+
+}
+#progress::before{
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 60%;
+    margin-left: 35px;
+    height: 10px;
+    background: var(--line);
+    z-index: 111;
+}
+#progress::after{
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 90%;
+    height: 10px;
+    background: #c5cae9;
+
+}
+.lists{
+    display: flex;
+justify-content: space-between;
+    flex-wrap: wrap;
+    width:100%;
+}
+.list{
+    display: flex;
+    gap: 1em;
+    flex: 1 1 60px;
+    padding: 10px;
+}
+.list p{
+    font-size: 1.1rem;
+   
+}
+.list img{
+    width: 50px;
+  
+}

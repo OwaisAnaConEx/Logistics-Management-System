@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+<style>
+    img {
+        width: 150px;
+        text-align: left !important;
+    }
+    *{
+        margin: 0px;
+        padding: 0px;
+    
+    }
+    body{
+        background-color: #50418d;
+    }
+    .container{
+        width: 30%;
+        padding:50px 0px 20px 20px;
+        border-radius: 10px;
+        height: 400px;
+        background-color: white;
+        margin: 5% auto;
+    }
+    .form-group {
+        height: 20px;
+        margin: 20px;
+        font-size: 18px;
+        border-bottom: 2px solid #50418d;
+        width: 80% !important;
+        padding: 15px;
+        color:#50418d;
+    }
+    button{
+       width: 100%;
+        padding: 7px;
+        margin: 20px;
+        background-color: #50418d;
+        color: white;
+        border: none;
+        outline: none;
+        font-family: 'Poppins', sans-serif !important; 
+        border-radius: 5px;
+        font-size: 15px;
+        text-align: center;
+        margin: 0 auto !important;
+    }
+    .text-center {
+        width: 30%;
+        margin:40px 20px;
+    }
+    h1 {
+            font-family: 'Poppins', sans-serif !important; 
+        font-size: 30px;
+        width: 30%;
+        text-transform: uppercase;
+        font-weight: bold !important;
+        margin: 0 auto;
+    
+    }
+    input{
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif !important; 
+        margin-left: 20px;
+        background: transparent;
+    }
+    
+    
+</style>
+<form method = "POST" action="">
+
+    {% csrf_token %}
+   
+
+
+    <div class="container">
+        <img src="https://www.shipstation.com/wp-content/uploads/2016/11/fedex_feature.png"/>
+        <div class="form">
+ <h1>Login</h1>
+
+
+<div class="form-group col-md-6">
+    <i class="fa fa-user" aria-hidden="true"></i><input type="text" class="form-control" id="username" name="username" placeholder="Username"/>
+</div>
+
+
+  <div class="form-group col-md-6">
+    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+  <input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Login</button>
+</div>
+
+<h1 style="text-align:right;font-size:10px;font-weight:500;text-transform:capitalize;width:90%;margin:0px !important">
+    <a href="/signup" style="text-decoration:none;color:black"> Don't have account? Signup</a></h1>
+</form>
+</div>
+<div>

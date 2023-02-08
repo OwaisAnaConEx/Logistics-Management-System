@@ -1,0 +1,71 @@
+.bgimg {
+    background:rgba(0,0,0,0.7) url("https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i7QIoUCSpoZA/v1/1200x-1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    width: 100%;
+    height: 660px;
+}
+.navbar-brand img{
+    width: 100px;
+
+}
+
+.hearderset{
+    padding-top: 180px;
+    box-sizing: border-box;
+}
+.hearderset h1{
+    font-size: 55px;
+}
+.hearderset p{
+    font-size: 30px;
+}
+.box{
+    border: none;
+    background-color: white;
+    width: 150px;
+    height: 120px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+#box2 img{
+    width: 60%;
+    margin: 10px;
+    filter: invert(100%);
+}
+
+#box1 img{
+    width: 52% ;
+}   
+#box1{
+    margin-left:-5px;
+
+}
+#box2{
+    background-color: rgb(77 20 140);
+    color: white;
+    
+}
+
+.input-group  {
+    width: 50% !important;
+    margin: auto;
+    padding: 10px;
+    display: flex !important;
+    
+}
+.nav-item{
+  padding: 0px 10px;
+  margin: 0px 20px;
+}
+
+.form-group btn{
+    background-color: rgb(255 102 0);;
+}
+
